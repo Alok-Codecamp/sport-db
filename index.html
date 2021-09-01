@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sportDB</title>
+    <!-- bootstrap css link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <style>
+      .loder {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin: auto auto auto auto;
+      }
+      .loder > img {
+        width: 150%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loder">
+      <img src="images/ajax-loader (1).gif" alt="loading...." />
+    </div>
+    <header>
+      <h1 class="text-center">Search your favorite player</h1>
+
+      <div class="input-group mb-3 w-50 mx-auto">
+        <input
+          id="search-inp"
+          type="text"
+          class="form-control"
+          placeholder="search player"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <button
+          onclick="lodePlayerData()"
+          class="btn btn-outline-secondary btn-primary text-light"
+          type="button"
+          id="button-addon2"
+        >
+          Search
+        </button>
+      </div>
+
+      <div id="details"></div>
+    </header>
+    <main>
+      <section id="players-sec">
+        <div id="players" class="row row-cols-1 row-cols-md-3 g-4"></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+    <script>
+      let loder = document.querySelector(".loder");
+      window.addEventListener("load", function () {
+        // loder.style.display = "none";
+        loder.parentElement.removeChild(loder);
+      });
+    </script>
+  </body>
+</html>
